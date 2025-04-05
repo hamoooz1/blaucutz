@@ -2,8 +2,20 @@ import React from "react";
 import { Instagram } from "lucide-react";
 import { motion } from "framer-motion";
 import "./NavBar.css";
+import {useState} from 'react';
+import { PopupButton } from 'react-calendly';
 
-const NavBar = ({ onBookClick }) => {
+const NavBar = () => {
+  const [showCalender, setShowCalendar] = useState(false);
+
+  const showCalendarHandler = () => {
+    if(!showCalender) {
+      setShowCalendar(true);
+    } else {
+      setShowCalendar(false);
+    }
+  }
+
   return (
     <nav className="navbar">
       {/* Left: Logo */}
@@ -23,13 +35,12 @@ const NavBar = ({ onBookClick }) => {
         >
           <Instagram className="social-icon" />
         </a>
-        <motion.button
-          className="book-button"
-          whileTap={{ scale: 0.95 }}
-          onClick={onBookClick}
-        >
-          Book Now
-        </motion.button>
+        <PopupButton
+        url="https://calendly.com/kaderidev"
+        rootElement={document.getElementById('root')}
+        text="Book Now"
+        className="book-button"
+      />
       </div>
     </nav>
   );
