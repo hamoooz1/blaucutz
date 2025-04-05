@@ -168,7 +168,6 @@
   .navbar {
     height: auto;
     padding: 0.5rem 1rem;
-    flex-wrap: wrap;
     width:100%;
   }
   
