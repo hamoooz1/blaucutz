@@ -3,7 +3,6 @@ import './App.css';
 import Header from './components/Header';
 import Gallery from './components/Gallery';
 import Booking from './components/Booking';
-import Footer from './components/Footer';
 import NavBar from './components/NavBar';
 
 function App() {
@@ -13,7 +12,6 @@ function App() {
       <Header />
       <Gallery />
       <Booking />
-      <Footer />
     </div>
   );
 }
