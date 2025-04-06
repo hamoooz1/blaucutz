@@ -7,10 +7,10 @@
   align-items: center;
   justify-content: flex-start;
   padding: 0 1.5rem;
-  z-index: 50;
+  z-index: 100;
   backdrop-filter: blur(20px); /* more blur for smoother blend */
   -webkit-backdrop-filter: blur(20px); /* Safari support */
-  position: absolute; /* make sure it's layered over the video */
+  position: fixed; /* make sure it's layered over the video */
   top: 0;
   left: 0;
 }
