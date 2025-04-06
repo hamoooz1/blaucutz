@@ -22,7 +22,7 @@ const Gallery = () => {
     if (isMobile) {
       Object.values(mediaRefs.current).forEach((el) => {
         if (el?.tagName === 'VIDEO') {
-          el.play().catch(() => {});
+          el.play().catch(() => { });
         }
       });
     }
@@ -31,7 +31,7 @@ const Gallery = () => {
   const handleMouseEnter = (key) => {
     const el = mediaRefs.current[key];
     if (el?.tagName === 'VIDEO' && !isMobile) {
-      el.play().catch(() => {});
+      el.play().catch(() => { });
     }
   };
 
@@ -46,65 +46,67 @@ const Gallery = () => {
   return (
     <>
       <section id="gallery" className="gallery">
-      <div className="gallery-container">
-  {!isMobile ? (
-    <div className="desktop-gallery">
-      {mediaItems.map((item, idx) => {
-        const key = `media-${idx}`;
-        return item.type === 'video' ? (
-          <video
-            key={key}
-            ref={(el) => (mediaRefs.current[key] = el)}
-            src={item.src}
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            className="cut-video"
-            onMouseEnter={() => handleMouseEnter(key)}
-            onMouseLeave={() => handleMouseLeave(key)}
-            onClick={() => setModalMedia({ type: 'video', src: item.src })}
-            controls={false}
-          />
-        ) : (
-          <img
-            key={key}
-            ref={(el) => (mediaRefs.current[key] = el)}
-            src={item.src}
-            alt="cut"
-            className="cut-video"
-            onClick={() => setModalMedia({ type: 'image', src: item.src })}
-          />
-        );
-      })}
-    </div>
-  ) : (
-    <Swiper spaceBetween={20} slidesPerView={1} pagination={{ clickable: true }}>
-      {mediaItems.map((item, idx) => (
-        <SwiperSlide key={`slide-${idx}`}>
-          {item.type === 'video' ? (
-            <video
-              src={item.src}
-              muted
-              loop
-              playsInline
-              controls
-              className="cut-video"
-              style={{ width: '100%', height: 'auto' }}
-            />
+        <div className="gallery-container">
+          {!isMobile ? (
+            <div className="desktop-gallery">
+              {mediaItems.map((item, idx) => {
+                const key = `media-${idx}`;
+                return item.type === 'video' ? (
+                  <video
+                    key={key}
+                    ref={(el) => (mediaRefs.current[key] = el)}
+                    src={item.src}
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    className="cut-video"
+                    onMouseEnter={() => handleMouseEnter(key)}
+                    onMouseLeave={() => handleMouseLeave(key)}
+                    onClick={() => setModalMedia({ type: 'video', src: item.src })}
+                    controls={false}
+                  />
+                ) : (
+                  <img
+                    key={key}
+                    ref={(el) => (mediaRefs.current[key] = el)}
+                    src={item.src}
+                    alt="cut"
+                    className="cut-video"
+                    onClick={() => setModalMedia({ type: 'image', src: item.src })}
+                  />
+                );
+              })}
+            </div>
           ) : (
-            <img
-              src={item.src}
-              alt="cut"
-              className="cut-video"
-              style={{ width: '100%', height: 'auto' }}
-            />
+            <Swiper spaceBetween={20} slidesPerView={1} pagination={{ clickable: true }}>
+              {mediaItems.map((item, idx) => (
+                <SwiperSlide key={`slide-${idx}`}>
+                  {item.type === 'video' ? (
+                    <video
+                      src={item.src}
+                      muted
+                      loop
+                      autoPlay
+                      playsInline
+                      controls
+                      className="cut-video"
+                      style={{ width: '100%', height: 'auto' }}
+                    />
+                  ) : (
+                    <img
+                      src={item.src}
+                      alt="cut"
+                      className="cut-video"
+                      style={{ width: '100%', height: 'auto' }}
+                    />
+                  )}
+                </SwiperSlide>
+              ))}
+            </Swiper>
+
           )}
-        </SwiperSlide>
-      ))}
-    </Swiper>
-  )}
-</div>
+        </div>
 
       </section>
 
