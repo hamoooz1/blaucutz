@@ -89,6 +89,10 @@
     display: none;
   }
 
+  .home-link {
+    display: none;
+  }
+  
   .navbar-links {
     position: fixed;
     top: 0;

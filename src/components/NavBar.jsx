@@ -32,7 +32,7 @@ const NavBar = () => {
 
       {/* Nav Links */}
       <div className={`navbar-links ${menuOpen ? "active" : ""}`}>
-        <a href="#home" className="navbar-link" onClick={handleNavClick}>
+        <a href="#home" className="navbar-link home-link" onClick={handleNavClick}>
           Home
         </a>
         <a href="#prices" className="navbar-link" onClick={handleNavClick}>
