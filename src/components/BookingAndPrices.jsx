@@ -1,13 +1,37 @@
-import React, { useEffect, useState } from 'react';
 import './BookingAndPrices.css';
 import { Scissors, PenLine, Sprout } from 'lucide-react';
 import { SOCIAL_LINKS } from '../config';
+import React, { useEffect, useRef, useState } from 'react';
 
 const PriceBox = ({ title, Icon, amount }) => {
   const [count, setCount] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef(null);
 
+  // Observe visibility
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      {
+        threshold: 0.5, // element is at least 50% visible
+      }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+
+    return () => {
+      if (ref.current) observer.unobserve(ref.current);
+    };
+  }, []);
+
+  // Run the counter when visible
+  useEffect(() => {
+    if (!isVisible) return;
+
     let start = 0;
+    setCount(0); // reset every time it becomes visible
     const duration = 2000;
     const stepTime = Math.max(Math.floor(duration / amount), 40);
 
@@ -18,10 +42,10 @@ const PriceBox = ({ title, Icon, amount }) => {
     }, stepTime);
 
     return () => clearInterval(counter);
-  }, [amount]);
+  }, [isVisible, amount]);
 
   return (
-    <div className="price-box">
+    <div className="price-box" ref={ref}>
       <Icon size={32} strokeWidth={1.5} />
       <h3>{title}</h3>
       <p className="price">${count}</p>

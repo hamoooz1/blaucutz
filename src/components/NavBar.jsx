@@ -42,7 +42,7 @@ const NavBar = () => {
         <a href="#prices" className="navbar-link" onClick={handleNavClick}>
           Prices
         </a>
-        <a href="#booking" className="navbar-link" onClick={handleNavClick}>
+        <a href="#prices" className="navbar-link" onClick={handleNavClick}>
           Book Appointment
         </a>
         <span className="divider">|</span>
