@@ -62,6 +62,9 @@
 .menu-icon {
   display: none;
   flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.4); /* same as .navbar */
+  backdrop-filter: blur(20px);         /* same as .navbar */
+  -webkit-backdrop-filter: blur(20px);
   gap: 4px;
   z-index: 100;
 }
@@ -88,8 +91,8 @@
     display: none;
   }
 
-  .home-link {
-    display: none;
+  .navbar-links.active .home-link {
+    display: none !important;
   }
   
   .navbar-links {
