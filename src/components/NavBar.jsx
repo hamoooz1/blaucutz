@@ -35,14 +35,14 @@ const NavBar = () => {
         <a href="#home" className="navbar-link home-link" onClick={handleNavClick}>
           Home
         </a>
+        <a href="#gallery" className="navbar-link" onClick={handleNavClick}>
+          Gallery
+        </a>
         <a href="#prices" className="navbar-link" onClick={handleNavClick}>
           Prices
         </a>
         <a href="#booking" className="navbar-link" onClick={handleNavClick}>
           Book Appointment
-        </a>
-        <a href="#gallery" className="navbar-link" onClick={handleNavClick}>
-          Gallery
         </a>
         <span className="divider">|</span>
         <a
