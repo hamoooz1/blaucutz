@@ -1,30 +1,12 @@
-.gallery {
-  padding: 4rem 2rem;
+.gallery-container {
+  padding: 4rem 2rem 1rem 2rem;
+}
+
+.desktop-gallery {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-}
-
-.gallery-category {
-  flex: 1 1 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.gallery-title {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.grid {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  width: 100%;
-  align-items: center;
+  flex-wrap: wrap;
 }
 
 .cut-video {
@@ -36,54 +18,14 @@
   cursor: pointer;
 }
 
-.gallery-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.9);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal-media {
-  max-width: 90vw;
-  max-height: 90vh;
-  border-radius: 10px;
-}
-
-/* Responsive layout: stack categories on small screens */
+/* Swiper handles mobile layout, so nothing fancy needed there */
 @media (max-width: 768px) {
-  .gallery-tabs {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    margin-top: 2rem;
-
-  }
-
-  .gallery-tab {
-    padding: 0.75rem 2rem;
-    border: 1px solid black;
-    background: transparent;
-    font-weight: 600;
-    font-family: 'Space Grotesk', sans-serif;
-    color: black;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-  }
-
-  .gallery-tab:hover,
-  .gallery-tab.active {
-    background-color: black;
-    color: white;
-  }
-
-  .gallery-title {
+  .desktop-gallery {
     display: none;
+  }
+
+  .cut-video {
+    max-width: 90vw;
+    height: auto;
   }
 }
