@@ -29,6 +29,7 @@
   position: relative;
   cursor: pointer;
   font-family: 'Space Grotesk', sans-serif;
+  text-decoration: none;
 }
 
 .divider {
@@ -130,4 +131,8 @@
   .icon-link {
     display: none;
   }
+}
+
+a.navbar-link {
+  text-decoration: none;
 }

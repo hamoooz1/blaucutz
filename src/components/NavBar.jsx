@@ -7,10 +7,15 @@ const NavBar = () => {
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
-  // Optional: prevent background scroll when menu is open
+  // Prevent scroll when mobile menu is open
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : 'auto';
+    document.body.style.overflow = menuOpen ? "hidden" : "auto";
   }, [menuOpen]);
+
+  // Close menu on nav link click (mobile)
+  const handleNavClick = () => {
+    setMenuOpen(false);
+  };
 
   return (
     <nav className="navbar">
@@ -27,10 +32,18 @@ const NavBar = () => {
 
       {/* Nav Links */}
       <div className={`navbar-links ${menuOpen ? "active" : ""}`}>
-        <span className="navbar-link">Home</span>
-        <span className="navbar-link">Prices</span>
-        <span className="navbar-link">Book Appointment</span>
-        <span className="navbar-link">Gallery</span>
+        <a href="#home" className="navbar-link" onClick={handleNavClick}>
+          Home
+        </a>
+        <a href="#prices" className="navbar-link" onClick={handleNavClick}>
+          Prices
+        </a>
+        <a href="#booking" className="navbar-link" onClick={handleNavClick}>
+          Book Appointment
+        </a>
+        <a href="#gallery" className="navbar-link" onClick={handleNavClick}>
+          Gallery
+        </a>
         <span className="divider">|</span>
         <a
           className="navbar-link icon-link"
