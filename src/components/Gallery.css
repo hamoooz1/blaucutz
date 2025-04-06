@@ -1,71 +1,83 @@
 .gallery {
-  background-color: #fff;
   padding: 4rem 2rem;
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
 }
 
-.gallery h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #111;
+.gallery-category {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gallery-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  align-items: center;
 }
 
 .cut-video {
   width: 100%;
-  max-height: 400px;
+  max-width: 250px;
+  height: 350px;
   object-fit: cover;
-  border-radius: 6px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease;
-  background-color: #000;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-/* Desktop hover effect only */
-@media (hover: hover) and (pointer: fine) {
-  .cut-video:hover {
-    transform: scale(1.02);
-  }
+.gallery-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Mobile Adjustments */
-@media screen and (max-width: 768px) {
+.modal-media {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 10px;
+}
+
+/* Responsive layout: stack categories on small screens */
+@media (max-width: 768px) {
   .gallery {
-    padding: 3rem 1rem;
-  }
-
-  .gallery h2 {
-    font-size: 1.75rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .cut-video {
-    max-height: 300px;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
-@media screen and (max-width: 480px) {
-  .gallery h2 {
-    font-size: 1.5rem;
-  }
-
-  .cut-video {
-    max-height: 220px;
-    border-radius: 4px;
-  }
-
-  .grid {
-    gap: 1rem;
-  }
+.gallery-tabs {
+  display: none;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
 }
 
-.grid video:nth-child(1) {
-  object-position: center 100%;
+@media (max-width: 768px) {
+  .gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gallery-tabs {
+    display: flex;
+  }
 }
