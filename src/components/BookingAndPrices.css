@@ -124,12 +124,11 @@
   }
 
   .booking-panel {
-    margin-bottom: 1rem; /* 👈 tighten gap */
     padding-bottom: 0;
   }
 
   .prices-panel {
-    margin-top: 0.5rem; /* 👈 reduce top gap */
+    margin-top: 1rem; /* 👈 reduce top gap */
   }
 
   .booking-description {
