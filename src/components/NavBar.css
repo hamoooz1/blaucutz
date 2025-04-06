@@ -23,6 +23,7 @@
   transform: translateX(-50%);
   display: flex;
   gap: 1.5em;
+  font-size: 0.9em;
 }
 
 .navbar-link {
@@ -88,13 +89,14 @@
     left: 0;
     transform: none;
     width: 100%;
+    height: calc(100vh - 50px); /* take up full screen minus navbar height */
     flex-direction: column;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.95);
-    padding: 1em 0;
-    gap: 1em;
+    padding: 2em 0;
+    gap: 2em;
     display: none;
-  }
+  }  
 
   .navbar-links.active {
     display: flex;
@@ -104,5 +106,14 @@
 @media (max-width: 768px) {
   .icon-link {
     display: none;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .navbar-link {
+    font-size: 1rem;
+    padding: 0.5em 0;
   }
 }
