@@ -62,11 +62,19 @@
 .menu-icon {
   display: none;
   flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.4); /* same as .navbar */
-  backdrop-filter: blur(20px);         /* same as .navbar */
-  -webkit-backdrop-filter: blur(20px);
   gap: 4px;
   z-index: 100;
+  
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: none;      
+  outline: none;       
+  box-shadow: none;       
+  padding: 0;              
+  margin: 0;
+  cursor: pointer;
 }
 
 .bar {
