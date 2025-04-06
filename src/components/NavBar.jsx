@@ -9,7 +9,7 @@ const NavBar = () => {
 
   return (
     <nav className="navbar">
-      <div className="menu-icon" onClick={toggleMenu}>
+      <div className={`menu-icon ${menuOpen ? "hide" : ""}`} onClick={toggleMenu}>
         <div className={`bar ${menuOpen ? "open" : ""}`}></div>
         <div className={`bar ${menuOpen ? "open" : ""}`}></div>
         <div className={`bar ${menuOpen ? "open" : ""}`}></div>
@@ -23,7 +23,7 @@ const NavBar = () => {
         <span className="divider">|</span>
         <a
           className="navbar-link icon-link"
-          href="https://instagram.com/blcuttz/" // replace with actual handle
+          href="https://instagram.com/blcuttz/"
           target="_blank"
           rel="noopener noreferrer"
         >
