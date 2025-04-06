@@ -37,7 +37,6 @@ const Gallery = () => {
 
   return (
     <section id="gallery" className="gallery">
-      <h2>Our Cuts</h2>
       <div className="grid">
         {videos.map((src, index) => (
           <video

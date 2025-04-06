@@ -1,0 +1,79 @@
+.prices-section {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  background-color: #fff;
+  padding: 4rem 2rem;
+  flex-wrap: wrap;
+}
+
+.price-box {
+  background-color: #111;
+  color: white;
+  padding: 2rem;
+  flex: 1 1 0;
+  text-align: center;
+  font-family: 'Space Grotesk', sans-serif;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* White divider between boxes */
+.price-box:not(:last-child) {
+  border-right: 1px solid white;
+}
+
+/* Outer corners rounded */
+.price-box:first-child {
+  border-radius: 10px 0 0 10px;
+}
+
+.price-box:last-child {
+  border-radius: 0 10px 10px 0;
+}
+
+/* Hover effect: invert */
+.price-box:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.price-box:hover svg {
+  stroke: #000;
+}
+
+.price-box svg {
+  transition: stroke 0.3s ease;
+}
+
+.price-box h3 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+.price-box .price {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0.5rem 0 0;
+}
+
+/* Responsive mobile stacking */
+@media screen and (max-width: 768px) {
+  .prices-section {
+    flex-direction: column;
+  }
+
+  .price-box,
+  .price-box:first-child,
+  .price-box:last-child {
+    border-radius: 10px;
+    border: 1px solid white;
+  }
+
+  .price-box:not(:last-child) {
+    border-right: none;
+    margin-bottom: 1rem;
+  }
+}

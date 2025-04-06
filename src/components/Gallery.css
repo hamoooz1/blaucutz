@@ -65,3 +65,7 @@
     gap: 1rem;
   }
 }
+
+.grid video:nth-child(1) {
+  object-position: center 100%;
+}

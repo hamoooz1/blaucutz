@@ -1,46 +1,34 @@
-import React from "react";
-import { Instagram } from "lucide-react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
 import "./NavBar.css";
-import {useState} from 'react';
-import { PopupButton } from 'react-calendly';
+import { Instagram } from "lucide-react";
 
 const NavBar = () => {
-  const [showCalender, setShowCalendar] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const showCalendarHandler = () => {
-    if(!showCalender) {
-      setShowCalendar(true);
-    } else {
-      setShowCalendar(false);
-    }
-  }
+  const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
     <nav className="navbar">
-      {/* Left: Logo */}
-      <div className="navbar-left">
-        <a href="/" className="logo-link">
-          <img src="/logo.jpeg" alt="BlauCutz Logo" className="navbar-logo" />
-        </a>
+      <div className="menu-icon" onClick={toggleMenu}>
+        <div className={`bar ${menuOpen ? "open" : ""}`}></div>
+        <div className={`bar ${menuOpen ? "open" : ""}`}></div>
+        <div className={`bar ${menuOpen ? "open" : ""}`}></div>
       </div>
 
-      {/* Right: Instagram + Book Now */}
-      <div className="navbar-right">
+      <div className={`navbar-links ${menuOpen ? "active" : ""}`}>
+        <span className="navbar-link">Home</span>
+        <span className="navbar-link">Prices</span>
+        <span className="navbar-link">Book Appointment</span>
+        <span className="navbar-link">Gallery</span>
+        <span className="divider">|</span>
         <a
-          href="https://www.instagram.com/blcuttz/"
+          className="navbar-link icon-link"
+          href="https://instagram.com/blcuttz/" // replace with actual handle
           target="_blank"
           rel="noopener noreferrer"
-          className="social-link"
         >
-          <Instagram className="social-icon" />
+          <Instagram size={20} />
         </a>
-        <PopupButton
-        url="https://calendly.com/kaderidev"
-        rootElement={document.getElementById('root')}
-        text="Book Now"
-        className="book-button"
-      />
       </div>
     </nav>
   );
