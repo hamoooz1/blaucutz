@@ -108,15 +108,15 @@
   .booking-prices-section {
     flex-direction: column;
     padding: 3rem 1.5rem;
-    gap: 3rem;
+    gap: 1.5rem;
   }
 
   .booking-testimonials {
-    display: none; /* 👈 hide testimonials on mobile */
+    display: none;
   }
 
   .booking-buttons {
-    justify-content: center; /* center buttons for smaller layout */
+    justify-content: center;
   }
 
   .booking-panel, .prices-panel {
@@ -131,3 +131,4 @@
     text-align: center;
   }
 }
+
