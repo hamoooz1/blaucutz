@@ -5,12 +5,14 @@ import 'swiper/css';
 
 import taper1 from '../videos/taper1.mp4';
 import taper2 from '../videos/taper2.mp4';
+import taper3 from '../videos/taper3.mp4';
 import design1 from '../videos/design1.mp4';
 
 const mediaItems = [
   { src: taper1, type: 'video' },
   { src: taper2, type: 'video' },
   { src: design1, type: 'video' },
+  {src: taper3, type: 'video'},
 ];
 
 const Gallery = () => {
