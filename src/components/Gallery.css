@@ -43,7 +43,7 @@
   z-index: 999;
   width: 100vw;
   height: 100vh;
-  background: rgba(0,0,0,0.9);
+  background: rgba(0, 0, 0, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,27 +57,31 @@
 
 /* Responsive layout: stack categories on small screens */
 @media (max-width: 768px) {
-  .gallery {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-.gallery-tabs {
-  display: none;
-  width: 100%;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-  gap: 1rem;
-}
-
-@media (max-width: 768px) {
-  .gallery {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .gallery-tabs {
     display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .gallery-tab {
+    padding: 0.75rem 2rem;
+    border: 1px solid black;
+    background: transparent;
+    font-weight: 600;
+    font-family: 'Space Grotesk', sans-serif;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  .gallery-tab:hover,
+  .gallery-tab.active {
+    background-color: black;
+    color: white;
+  }
+
+  .gallery-title {
+    display: none;
   }
 }

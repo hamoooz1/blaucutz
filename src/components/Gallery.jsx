@@ -65,7 +65,7 @@ const Gallery = () => {
 
   return (
     <>
-      {/* Mobile Tabs */}
+      {/* MOBILE-ONLY Category Buttons */}
       {isMobile && (
         <div className="gallery-tabs">
           {Object.keys(categorizedBursts).map((cat) => (
@@ -79,13 +79,15 @@ const Gallery = () => {
           ))}
         </div>
       )}
-
+  
       <section id="gallery" className="gallery">
         {Object.entries(categorizedBursts)
           .filter(([category]) => !isMobile || category === activeCategory)
           .map(([category, items]) => (
             <div key={category} className="gallery-category">
-              <h2 className="gallery-title">{category}</h2>
+              {/* DESKTOP-ONLY Category Title */}
+              {!isMobile && <h2 className="gallery-title">{category}</h2>}
+  
               <div className="grid">
                 {items.map((item, idx) => {
                   const key = `${category}-${idx}`;
@@ -119,7 +121,7 @@ const Gallery = () => {
             </div>
           ))}
       </section>
-
+  
       {/* MODAL VIEWER */}
       {modalMedia && (
         <div className="gallery-modal" onClick={() => setModalMedia(null)}>
@@ -132,6 +134,7 @@ const Gallery = () => {
       )}
     </>
   );
+  
 };
 
 export default Gallery;
