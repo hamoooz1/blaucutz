@@ -57,7 +57,7 @@ const BookingAndPrices = () => {
   return (
     <section className="booking-prices-section">
       {/* BOOKING */}
-      <div className="booking-panel">
+      <div className="booking-panel" id="booking">
         <h2 className="booking-title">BOOK YOUR CUT</h2>
         <div className="booking-testimonials">
           <div className="testimonial">
