@@ -1,0 +1,133 @@
+.booking-prices-section {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5rem 2rem;
+  gap: 4rem;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.prices-panel, .booking-panel {
+  flex: 1 1 400px;
+  max-width: 500px;
+}
+
+.section-title, .booking-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  font-family: 'Space Grotesk', sans-serif;
+  margin-bottom: 1rem;
+}
+
+.prices-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.price-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.price-box h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.price {
+  margin-left: auto;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.booking-description {
+  font-size: 1rem;
+  color: #222;
+  margin-bottom: 2rem;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.booking-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.booking-btn {
+  padding: 0.75rem 2rem;
+  border: 1px solid black;
+  background: transparent;
+  font-weight: 600;
+  text-decoration: none;
+  color: black;
+  font-family: 'Space Grotesk', sans-serif;
+  transition: background-color 0.2s ease;
+}
+
+.booking-btn:hover {
+  background-color: black;
+  color: white;
+}
+
+.booking-testimonials {
+  margin-top: 1rem; /* smaller than before */
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial {
+  padding: .5rem 0;
+}
+
+.testimonial:first-child {
+  padding-top: 0; /* remove extra space from top */
+}
+
+.testimonial:last-child {
+  margin-bottom: 2rem; /* give the final one breathing room */
+}
+
+.testimonial .quote {
+  font-style: italic;
+  font-size: 1rem;
+  color: #333;
+}
+
+.testimonial .author {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #000;
+  margin-top: 0.3rem;
+}
+
+@media (max-width: 768px) {
+  .booking-prices-section {
+    flex-direction: column;
+    padding: 3rem 1.5rem;
+    gap: 3rem;
+  }
+
+  .booking-testimonials {
+    display: none; /* 👈 hide testimonials on mobile */
+  }
+
+  .booking-buttons {
+    justify-content: center; /* center buttons for smaller layout */
+  }
+
+  .booking-panel, .prices-panel {
+    max-width: 100%;
+  }
+
+  .section-title, .booking-title {
+    text-align: center;
+  }
+
+  .booking-description {
+    text-align: center;
+  }
+}

@@ -6,6 +6,7 @@ import Booking from './components/Booking';
 import NavBar from './components/NavBar';
 import Prices from './components/Prices';
 import Footer from './components/Footer';
+import BookingAndPrices from './components/BookingAndPrices';
 
 function App() {
   return (
@@ -14,8 +15,7 @@ function App() {
         <NavBar />
         <section id="home"><Header /></section>
         <section id="gallery"><Gallery /></section>
-        <section id="prices"><Prices /></section>
-        <section id="booking"><Booking /></section>
+        <section id="prices"><BookingAndPrices /></section>
         <section id="footer" ><Footer /></section>
       </div>
 
