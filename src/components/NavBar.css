@@ -1,20 +1,19 @@
 .navbar {
   width: 100%;
   height: 50px;
-  background-color: rgba(0, 0, 0, 0.4); /* lighter for more transparency */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* softer border */
+  background-color: rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
   align-items: center;
   justify-content: flex-start;
   padding: 0 1.5rem;
   z-index: 100;
-  backdrop-filter: blur(20px); /* more blur for smoother blend */
-  -webkit-backdrop-filter: blur(20px); /* Safari support */
-  position: fixed; /* make sure it's layered over the video */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  position: fixed;
   top: 0;
   left: 0;
 }
-
 
 /* Centered links container */
 .navbar-links {
@@ -40,7 +39,6 @@
   user-select: none;
 }
 
-/* Optional hover effect for icon */
 .icon-link:hover svg {
   stroke: #aaa;
   transition: stroke 0.2s ease;
@@ -61,13 +59,13 @@
   width: 100%;
 }
 
-/* Hamburger menu icon */
+/* Hamburger menu icon (always hidden by default) */
 .menu-icon {
   display: none;
   flex-direction: column;
   cursor: pointer;
   gap: 4px;
-  z-index: 100; /* Stay above links on mobile */
+  z-index: 100;
 }
 
 .bar {
@@ -79,8 +77,18 @@
 
 /* MOBILE STYLES */
 @media (max-width: 768px) {
+  /* Show hamburger menu */
+  .menu-icon {
+    display: flex;
+  }
+
+  /* Hide hamburger only when menu is active */
+  .menu-icon.hide {
+    display: none;
+  }
+
   .navbar-links {
-    position: fixed; /* key: fixed, not absolute */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
@@ -93,7 +101,7 @@
     padding: 0;
     margin: 0;
     gap: 0;
-    z-index: 999; /* ensure it's above everything else */
+    z-index: 999;
   }
 
   .navbar-links.active {
@@ -121,11 +129,6 @@
 
   .divider,
   .icon-link {
-    display: none;
-  }
-
-  /* Hide the hamburger when menu is open */
-  .menu-icon.hide {
     display: none;
   }
 }
