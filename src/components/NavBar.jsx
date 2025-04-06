@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./NavBar.css";
 import { Instagram } from "lucide-react";
+import { SOCIAL_LINKS } from "../config";
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -47,7 +48,7 @@ const NavBar = () => {
         <span className="divider">|</span>
         <a
           className="navbar-link icon-link"
-          href="https://instagram.com/blcuttz/"
+          href={SOCIAL_LINKS.instagram}
           target="_blank"
           rel="noopener noreferrer"
         >

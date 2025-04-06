@@ -1,5 +1,6 @@
 import React from 'react';
 import './Header.css';
+import { SOCIAL_LINKS } from "../config";
 
 const Header = () => {
   return (
@@ -15,7 +16,7 @@ const Header = () => {
       <div className="video-overlay" />
       <div className="header-content">
         <a
-          href="https://calendly.com/kaderidev"
+          href={SOCIAL_LINKS.calendly}
           target="_blank"
           rel="noopener noreferrer"
           className="popup-btn-header"

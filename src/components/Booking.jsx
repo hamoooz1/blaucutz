@@ -1,17 +1,19 @@
 import React from 'react';
-import { PopupButton } from 'react-calendly';
 import './Booking.css';
+import { SOCIAL_LINKS } from "../config";
 
 const Booking = () => {
   return (
     <section id="book" className="booking">
       <h2>Book Your Appointment</h2>
-      <PopupButton
-        url="https://calendly.com/kaderidev"
-        rootElement={document.getElementById('root')}
-        text="Launch Calendar"
-        className="popup-btn"
-      />
+      <a
+          href={SOCIAL_LINKS.calendly}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="popup-btn-header"
+        >
+          Book Appointment
+        </a>
     </section>
   );
 };

@@ -1,39 +1,22 @@
-.footer-bar {
+.footer {
   width: 100%;
-  height: 40px;
-  padding: 0 1rem;
-  background-color: rgba(0, 0, 0, 0.8);
-  border-top: 1px solid #444;
+  height: 50px;
+  background-color: black;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  position: fixed;
+  justify-content: center;
+  gap: 1.5rem;
   bottom: 0;
   left: 0;
-  z-index: 50;
-  backdrop-filter: blur(6px);
+  z-index: 100;
 }
 
-.footer-text {
+.footer-icon {
   color: white;
-  font-size: 0.75rem;
-  font-weight: 600;
+  transition: color 0.2s ease;
 }
 
-.footer-btn {
-  padding: 0.25rem 0.75rem;
-  border: 1px solid #0ff;
-  color: #0ff;
-  font-size: 0.7rem;
-  font-family: monospace;
-  letter-spacing: 0.05em;
-  border-radius: 5px;
-  text-decoration: none;
-  box-shadow: 0 0 6px rgba(0, 255, 255, 0.2);
-  transition: all 0.3s ease;
-}
-
-.footer-btn:hover {
-  background-color: #0ff;
-  color: black;
+.footer-icon:hover svg {
+  stroke: #aaa;
 }

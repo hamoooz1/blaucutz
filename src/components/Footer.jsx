@@ -1,22 +1,30 @@
 import React from "react";
 import "./Footer.css";
+import { Instagram, Calendar } from "lucide-react";
+import { SOCIAL_LINKS } from "../config";
 
 const Footer = () => {
   return (
-    <footer className="footer-bar">
-      <div className="footer-text">
-        © {new Date().getFullYear()} BlauCutz. All rights reserved.
-      </div>
-
+    <div className="footer">
       <a
-        href="https://calendly.com/kaderidev"
+        href={SOCIAL_LINKS.instagram}
+        className="footer-icon"
         target="_blank"
-        rel="noreferrer"
-        className="footer-btn"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
       >
-        Book Appointment
+        <Instagram size={20} />
       </a>
-    </footer>
+      <a
+        href={SOCIAL_LINKS.calendly}  
+        className="footer-icon"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Book via Calendly"
+      >
+        <Calendar size={20} />
+      </a>
+    </div>
   );
 };
 
