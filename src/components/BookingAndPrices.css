@@ -119,16 +119,26 @@
     justify-content: center;
   }
 
-  .booking-panel, .prices-panel {
-    max-width: 100%;
-  }
-
   .section-title, .booking-title {
     text-align: center;
   }
 
-  .booking-description {
-    text-align: center;
+  .booking-panel {
+    margin-bottom: 0.5rem; /* 👈 tighten gap */
+    padding-bottom: 0;
   }
+
+  .prices-panel {
+    margin-top: 0.5rem; /* 👈 reduce top gap */
+  }
+
+  .booking-description {
+    margin-bottom: 1.25rem; /* reduce default 2rem */
+  }
+
+  .prices-grid {
+    margin-top: 1rem; /* reduce top margin */
+  }
+  
 }
 
