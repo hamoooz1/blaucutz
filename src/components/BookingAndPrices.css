@@ -107,7 +107,7 @@
 @media (max-width: 768px) {
   .booking-prices-section {
     flex-direction: column-reverse;
-    padding: 2rem 1.5rem;
+    padding: 3rem 1.5rem;
     gap: 1rem;
   }
 
@@ -124,7 +124,7 @@
   }
 
   .booking-panel {
-    margin-bottom: 0.5rem; /* 👈 tighten gap */
+    margin-bottom: 1rem; /* 👈 tighten gap */
     padding-bottom: 0;
   }
 
