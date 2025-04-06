@@ -108,7 +108,7 @@
   .booking-prices-section {
     flex-direction: column;
     padding: 3rem 1.5rem;
-    gap: 1.5rem;
+    gap: 1rem;
   }
 
   .booking-testimonials {
