@@ -100,7 +100,7 @@ const BookingAndPrices = () => {
         <div className="prices-grid">
           <PriceBox title="Cuts" Icon={Scissors} amount={25} />
           <PriceBox title="Design" Icon={PenLine} amount={5} />
-          <PriceBox title="Powder" Icon={Sprout} amount={20} />
+          <PriceBox title="Products" Icon={Sprout} amount={20} />
         </div>
       </div>
     </section>
